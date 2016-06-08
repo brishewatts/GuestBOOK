@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>SmartNinja basic Jinja template</title>
-
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>chat</title>
 </head>
 <body>
-    <h1>Hello, SmartNinja!</h1>
+
+    <form method="post" action="/poslji-sporocilo">
+        <p>
+            Ime:
+            <input name="ime">
+        </p>
+        <p>
+            E-mail:
+            <input name="email">
+        </p>
+        <p>
+            Sporočilo*:
+            <input name="sporocilo" required>
+        </p>
+        <p>
+            <button type="submit">Pošlji</button>
+        </p>
+        <p>
+            Vnos v polja označena z * je obvezen!
+        </p>
+    </form>
+
 </body>
 </html>
