@@ -41,9 +41,6 @@ class PosljiSporociloHandler(BaseHandler):
         if usr_ime == "":
             usr_ime = "unknown"
 
-        if usr_email == "":
-            usr_email = "not given"
-
         sporocilo = Sporocilo(ime=usr_ime, email=usr_email, message=usr_sporocilo)
         sporocilo.put()
 
