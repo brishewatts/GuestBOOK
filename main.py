@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 import jinja2
-import webapp
+import webapp2
 
 from models import Sporocilo
 
@@ -35,8 +35,8 @@ class MainHandler(BaseHandler):
 class PosljiSporociloHandler(BaseHandler):
     def post(self):
         usr_ime = self.request.get("ime")
-        usr_email = self.request.get ("email")
-        sporocilo = self.request.get("sporocilo")
+        usr_email = self.request.get("email")
+        usr_sporocilo = self.request.get("sporocilo")
 
         if usr_ime == "":
             usr_ime = "unknown"
@@ -44,7 +44,7 @@ class PosljiSporociloHandler(BaseHandler):
         if usr_email == "":
             usr_email = "not given"
 
-        sporocilo = Sporocilo(ime=usr_ime, email=usr_email, message=sporocilo)
+        sporocilo = Sporocilo(ime=usr_ime, email=usr_email, message=usr_sporocilo)
         sporocilo.put()
 
         return self.render_template("message.html")
