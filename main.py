@@ -34,9 +34,9 @@ class MainHandler(BaseHandler):
 
 class PosljiSporociloHandler(BaseHandler):
     def post(self):
-        usr_ime = self.request.get("ime")
-        usr_email = self.request.get("email")
-        usr_sporocilo = self.request.get("sporocilo")
+        usr_ime = self.request.get("usr_ime")
+        usr_email = self.request.get("usr_email")
+        usr_sporocilo = self.request.get("usr_sporocilo")
 
         if usr_ime == "":
             usr_ime = "unknown"
@@ -55,7 +55,7 @@ class PrikaziSporociloHandler(BaseHandler):
         return self.render_template("seznam_sporocil.html", params=params)
 
 
-class PosameznoSporocilo(BaseHandler):
+class PosameznoSporociloHandler(BaseHandler):
     def get(self, sporocilo_id):
         sporocilo = Sporocilo.get_by_id(int(sporocilo_id))
 
